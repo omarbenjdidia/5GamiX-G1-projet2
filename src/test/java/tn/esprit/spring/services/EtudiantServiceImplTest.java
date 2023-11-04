@@ -9,19 +9,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-import tn.esprit.spring.entities.User;
+import tn.esprit.spring.entities.Etudiant;
 
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
-class UserServiceImplTest {
+class EtudiantServiceImpl {
 
     @Autowired
-    IUserService us;
+    IEtudiantService E;
 
     @Test
     @Order(1)
-    public void testRetrieveAllUsers() {
-        List<User> listUsers = us.retrieveAllUsers();
-        Assertions.assertEquals(0, listUsers.size());
+    public void testretrieveAllEtudiants() {
+        List<Etudiant> listEtudiant = E.retrieveAllEtudiants();
+        Assertions.assertEquals(0, listEtudiant.size());
     }
 }
