@@ -19,7 +19,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.times;
 
 @RunWith(MockitoJUnitRunner.class)
-public class EtudiantServiceImplTest {
+public class EquipeServiceImplTest {
     @Mock
     private EtudiantRepository etudiantRepository;
 
@@ -41,23 +41,22 @@ public class EtudiantServiceImplTest {
     }
 
     @Test
-    public void testRetrieveAllEtudiants() {
-        // Create a list of sample Etudiant objects for testing
-        List<Etudiant> etudiants = new ArrayList<>();
-        // Add etudiant objects to the list
+public void testAddEquipe() {
+    // Create a mock Equipe object
+    Equipe equipe = new Equipe();
 
-        // Mock the behavior of the etudiantRepository
-        when(etudiantRepository.findAll()).thenReturn(etudiants);
+    // Mock the behavior of the equipeRepository's save method
+    when(equipeRepository.save(equipe)).thenReturn(equipe);
 
-        // Perform the test
-        List<Etudiant> result = etudiantService.retrieveAllEtudiants();
+    // Call the service method to add an Equipe
+    Equipe addedEquipe = equipeService.addEquipe(equipe);
 
-        // Verify that the etudiantRepository.findAll() method was called
-        verify(etudiantRepository, times(1)).findAll();
+    // Verify that the equipeRepository's save method was called once
+    verify(equipeRepository, times(1)).save(equipe);
 
-        // Assert the expected result
-        assertEquals(etudiants, result);
-    }
+    // Assert that the addedEquipe is the same as the mock Equipe
+    assertEquals(equipe, addedEquipe);
+}
 
     // Similar test methods for other service methods can be added here
 }
