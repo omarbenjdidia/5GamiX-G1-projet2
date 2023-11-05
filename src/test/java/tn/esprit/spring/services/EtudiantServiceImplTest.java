@@ -8,6 +8,12 @@ import org.mockito.junit.MockitoJUnitRunner;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
+package tn.esprit.spring.services;
+import tn.esprit.spring.entities.*;
+import tn.esprit.spring.repository.*;
+import static org.mockito.Mockito.when; // Add this import
+import static org.mockito.Mockito.verify; // Add this import
+import static org.mockito.Mockito.times; // Add this import
 
 
 @RunWith(MockitoJUnitRunner.class)
