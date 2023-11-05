@@ -1,3 +1,5 @@
+package tn.esprit.spring.services; // Move this line to the top
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,13 +10,11 @@ import org.mockito.junit.MockitoJUnitRunner;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
-package tn.esprit.spring.services;
 import tn.esprit.spring.entities.*;
 import tn.esprit.spring.repository.*;
-import static org.mockito.Mockito.when; // Add this import
-import static org.mockito.Mockito.verify; // Add this import
-import static org.mockito.Mockito.times; // Add this import
-
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.times;
 
 @RunWith(MockitoJUnitRunner.class)
 public class EtudiantServiceImplTest {
