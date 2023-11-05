@@ -20,9 +20,9 @@ import static org.mockito.Mockito.times;
 
 @RunWith(MockitoJUnitRunner.class)
 public class EquipeServiceImplTest {
-    @Mock
+   /* @Mock
     private EtudiantRepository etudiantRepository;
-
+*/
     @Mock
     private ContratRepository contratRepository;
 
@@ -33,7 +33,7 @@ public class EquipeServiceImplTest {
     private DepartementRepository departementRepository;
 
     @InjectMocks
-    private EtudiantServiceImpl etudiantService;
+    private EquipeServiceImpl equipeService;
 
     @Before
     public void setUp() {
