@@ -1,4 +1,4 @@
-package tn.esprit.spring.services; // Make sure to specify the correct package
+package tn.esprit.spring.services;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.times;
 
 @RunWith(MockitoJUnitRunner.class)
-public class EtudiantServiceImplTest {
+public class DepartementServiceImplTest {
     @Mock
     private EtudiantRepository etudiantRepository;
 
@@ -37,27 +37,16 @@ public class EtudiantServiceImplTest {
 
     @Before
     public void setUp() {
-        // Initialize any test data or configurations here
     }
 
     @Test
-    public void testRetrieveAllEtudiants() {
-        // Create a list of sample Etudiant objects for testing
-        List<Etudiant> etudiants = new ArrayList<>();
-        // Add etudiant objects to the list
-
-        // Mock the behavior of the etudiantRepository
-        when(etudiantRepository.findAll()).thenReturn(etudiants);
-
-        // Perform the test
-        List<Etudiant> result = etudiantService.retrieveAllEtudiants();
-
-        // Verify that the etudiantRepository.findAll() method was called
-        verify(etudiantRepository, times(1)).findAll();
-
-        // Assert the expected result
-        assertEquals(etudiants, result);
+    public void testRetrieveAllDepartement() {
+    List<Departement> result = Service.retrieveAllDepartements();
+        List<Departement> departements = new ArrayList<>();
+        when(departementRepository.findAll()).thenReturn(departements);
+        
+        verify(departementRepository, times(1)).findAll();
+        assertEquals(departements, result);
     }
 
-    // Similar test methods for other service methods can be added here
 }
