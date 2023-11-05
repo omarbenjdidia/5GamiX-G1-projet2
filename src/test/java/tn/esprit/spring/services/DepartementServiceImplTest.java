@@ -33,7 +33,7 @@ public class DepartementServiceImplTest {
     private DepartementRepository departementRepository;
 
     @InjectMocks
-    private EtudiantServiceImpl etudiantService;
+    private DepartementServiceImpl departementsService;
 
     @Before
     public void setUp() {
@@ -43,7 +43,7 @@ public class DepartementServiceImplTest {
     public void testRetrieveAllDepartement() {
           List<Departement> departements = new ArrayList<>();
            when(departementRepository.findAll()).thenReturn(departements);
-                List<Departement> result = Service.retrieveAllDepartements();
+                List<Departement> result = departementsService.retrieveAllDepartements();
         verify(departementRepository, times(1)).findAll();
         assertEquals(departements, result);
     }
