@@ -1,4 +1,5 @@
-FROM alpine
-RUN apk add openjdk11
-EXPOSE 80
-CMD "java"
+FROM openjdk:8-jdk-alpine
+EXPOSE 8082
+ADD target/kaddem-1.0.jar kaddem-1.0.jar
+
+ENTRYPOINT ["java", "-jar","/kaddem-1.0.jar"]
