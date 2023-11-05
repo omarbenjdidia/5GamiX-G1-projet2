@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 import tn.esprit.spring.entities.*;
-import tn.esprit.spring.repository.*;
+import tn.esprit.spring.repositories.*;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.times;
