@@ -11,10 +11,10 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 import tn.esprit.spring.entities.*;
-import tn.esprit.spring.repositories.EtudiantRepository;
-import tn.esprit.spring.repositories.ContratRepository;
-import tn.esprit.spring.repositories.EquipeRepository;
-import tn.esprit.spring.repositories.DepartementRepository;
+import tn.esprit.spring.repositories.kaddem.EtudiantRepository;
+import tn.esprit.spring.repositories.kaddem.ContratRepository;
+import tn.esprit.spring.repositories.kaddem.EquipeRepository;
+import tn.esprit.spring.repositories.kaddem.DepartementRepository;
 
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
