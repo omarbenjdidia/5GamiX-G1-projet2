@@ -1,4 +1,4 @@
-package tn.esprit.spring.services; // Move this line to the top
+package tn.esprit.spring.services; // Make sure to specify the correct package
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,12 +10,9 @@ import org.mockito.junit.MockitoJUnitRunner;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
-import tn.esprit.spring.entities.*;
-import tn.esprit.spring.*;
-//import tn.esprit.spring.repositories.kaddem.EtudiantRepository;
-//import tn.esprit.spring.repositories.kaddem.ContratRepository;
-//import tn.esprit.spring.repositories.kaddem.EquipeRepository;
-//import tn.esprit.spring.repositories.kaddem.DepartementRepository;
+import tn.esprit.spring.kaddem.entities.*;
+import tn.esprit.spring.kaddem.repositories.*;
+import tn.esprit.spring.kaddem.services.*;
 
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.verify;
