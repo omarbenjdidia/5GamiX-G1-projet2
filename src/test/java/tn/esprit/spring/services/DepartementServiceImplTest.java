@@ -41,10 +41,9 @@ public class DepartementServiceImplTest {
 
     @Test
     public void testRetrieveAllDepartement() {
-    List<Departement> result = Service.retrieveAllDepartements();
-        List<Departement> departements = new ArrayList<>();
-        when(departementRepository.findAll()).thenReturn(departements);
-        
+          List<Departement> departements = new ArrayList<>();
+           when(departementRepository.findAll()).thenReturn(departements);
+                List<Departement> result = Service.retrieveAllDepartements();
         verify(departementRepository, times(1)).findAll();
         assertEquals(departements, result);
     }
