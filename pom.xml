@@ -12,7 +12,7 @@
     <artifactId>springproject</artifactId>
     <version>SNAPSHOT-01</version>
     <name>springproject</name>
-    <description>kaddem</description>
+    <description>springproject</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
