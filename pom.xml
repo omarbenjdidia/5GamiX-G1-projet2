@@ -10,11 +10,11 @@
     </parent>
     <groupId>tn.esprit.spring</groupId>
     <artifactId>springproject</artifactId>
-    <version>0.0.1-SNAPSHOT</version> <!-- Adjust version number accordingly -->
+    <version>0.0.1-SNAPSHOT</version> <!-- Ensure version is 0.0.1-SNAPSHOT -->
     <name>springproject</name>
     <description>springproject</description>
     <properties>
-        <java.version>1.8</java.version> <!-- Adjust Java version if needed -->
+        <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -45,25 +45,31 @@
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.6.9</version>
         </dependency>
-        <!-- Use either JUnit 4 or JUnit 5, not both -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-        <!-- Specify JUnit 5 dependencies if needed -->
     </dependencies>
-
-    <!-- Deploy to Nexus (Update the URL with your Nexus repository) -->
     <distributionManagement>
         <repository>
             <id>deploymentRepo</id>
             <name>Nexus Repository</name>
             <url>http://192.168.231.236:8081/repository/maven-releases/</url>
         </repository>
+        <snapshotRepository>
+            <id>snapshotRepo</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://192.168.231.236:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
-
     <build>
         <plugins>
             <plugin>
