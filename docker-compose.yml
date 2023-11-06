@@ -16,7 +16,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: hamdiselmi/kaddemf:0.0.1
+    image: oussamasaid/kaddemf:0.0.1
     container_name: prkaddemm
     restart: on-failure
     ports:
