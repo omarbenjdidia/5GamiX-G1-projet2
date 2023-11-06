@@ -9,7 +9,7 @@ pipeline {
                 checkout scm
             }
         }
-        stage('Run Unit Tests') {
+        stage('Run Unit Tests mockito') {
             steps {
                  
                     script {
@@ -44,7 +44,7 @@ pipeline {
                     }
                 }
             }
-        stage('Deploy Front/Back/DB') {
+        stage('Deploy Back/DB') {
             steps {
 
                      script {
