@@ -13,7 +13,7 @@ services:
       - mysql-data:/var/lib/mysql
 
   spring-app:
-    image: oussamasaid_5gamix_g1_kaddem:ImageSpringboot
+    image: oussamasaid_5gamix_g1_kaddem:1.0 .
     container_name: gestion-kaddem
     restart:  on-failure
     environment:
