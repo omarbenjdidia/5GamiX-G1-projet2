@@ -18,13 +18,7 @@ pipeline {
                 
             }
         }
-        /*stage('MVN SONARQUBE') {
-            steps {
-                 
-                sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=admin -Dsonar.password=Sallamiyounes'
-            
-            }
-        }*/
+
         stage('Login Docker') {
         steps {
         script {
@@ -44,7 +38,7 @@ pipeline {
                     }
                 }
             }
-        stage('Deploy Back/DB') {
+        stage('DockerCompose Back/DB') {
             steps {
 
                      script {
@@ -59,4 +53,11 @@ pipeline {
                          sh 'mvn clean deploy -DskipTests'
                   }
                        }
+        stage('MVN SONARQUBE') {
+            steps {
+
+                          sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=admin -Dsonar.password=Sallamiyounes'
+
+                   }
+                               }
     }}
