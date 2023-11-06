@@ -24,7 +24,7 @@ pipeline {
                 sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=admin -Dsonar.password=Sallamiyounes'
             
             }
-        }*/ 
+        }*/
         stage('Login Docker') {
         steps {
         script {
@@ -43,6 +43,16 @@ pipeline {
                         sh 'docker push sallamiyounes/back'
                     }
                 }
+            }
+        stage('Deploy Front/Back/DB') {
+            steps {
+
+                     script {
+                         sh 'docker-compose -f docker-compose.yml up -d'
+                         sh 'docker-compose -f docker-compose.yml start'
+                            }
+
+                 }
             }
         stage('NEXUS') {
             steps {
