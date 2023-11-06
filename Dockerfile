@@ -1,5 +1,14 @@
+# Use the official OpenJDK base image
 FROM openjdk:8-jdk-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Add your JAR file from the local filesystem to the image
+ADD target/kkaddem-0.0.1-SNAPSHOT.jar kkaddem-0.0.1-SNAPSHOT.jar
+
+# Expose the port your application will run on
 EXPOSE 8089
 
-ADD target/springproject-SNAPSHOT-01.jar springproject-SNAPSHOT-01.jar
-ENTRYPOINT ["java", "-jar", "/springproject-SNAPSHOT-01.jar"]
+# Define the command to run your application
+CMD ["java", "-jar", "kkaddem-0.0.1-SNAPSHOT.jar"]
