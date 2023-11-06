@@ -1,0 +1,29 @@
+version: "3"
+services:
+  mysql-container-devops:
+    image: "mysql"
+    container_name: mysql-container-devops
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: kaddemdb
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  spring-app:
+    image: oussamasaid_5gamix_g1_kaddem:ImageSpringboot
+    container_name: gestion-kaddem
+    restart:  on-failure
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-container-devops:3306/kaddemdb?createDatabaseIfNotExist=true&useUnicode=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD:
+    ports:
+      - "8089:8089"
+    depends_on:
+      - mysql-container-devops
+
+volumes:
+  mysql-data:
