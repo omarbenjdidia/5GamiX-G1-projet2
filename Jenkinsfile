@@ -18,13 +18,13 @@ pipeline {
                 
             }
         }
-        stage('MVN SONARQUBE') {
+        /*stage('MVN SONARQUBE') {
             steps {
                  
                 sh 'mvn sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=admin -Dsonar.password=Sallamiyounes'
             
             }
-        }
+        }*/ 
         stage('Login Docker') {
         steps {
         script {
@@ -33,11 +33,7 @@ pipeline {
             }
         }      
         
-        stage('NEXUS') {
-                    steps {
-                        sh 'mvn clean deploy -DskipTests'
-                    }
-                }
+
 
         stage('Build & Push Docker Image ') {
             steps {
@@ -48,4 +44,9 @@ pipeline {
                     }
                 }
             }
+        stage('NEXUS') {
+            steps {
+                         sh 'mvn clean deploy -DskipTests'
+                  }
+                       }
     }}
