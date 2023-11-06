@@ -1,11 +1,8 @@
 # Use the official OpenJDK base image
 FROM openjdk:8-jdk-alpine
 
-# Set the working directory inside the container
-WORKDIR /app
-
 # Add your JAR file from the local filesystem to the image
-ADD ./target/kaddem-0.0.1-SNAPSHOT.jar app.jar
+ADD target/kaddem-1.0.jar app.jar
 
 # Expose the port your application will run on
 EXPOSE 8089
